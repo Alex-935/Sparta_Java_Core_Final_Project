@@ -1,18 +1,28 @@
-public class Card {
+public class BlackJackCard {
 
-    private int suit; //0 = clubs 1=diamonds 2 = hearts 3 = spades
     private int face;
+    private int suit;
 
-    public Card(int s , int f) {
+    public BlackJackCard(int s, int f) {
         this.suit = s;
         this.face = f;
     }
 
-    @Override
-    public String toString(){
-        return ("The current card is the " + printFace(this.face) + " of " + printSuit(this.suit));
+    public int getFace() {
+        return face;
     }
 
+    public void setFace(int face) {
+        this.face = face;
+    }
+
+    public int getSuit() {
+        return suit;
+    }
+
+    public void setSuit(int suit) {
+        this.suit = suit;
+    }
 
     public String printFace(int f){
 
@@ -35,22 +45,4 @@ public class Card {
             default -> "";
         };
     }
-
-    public int getFace() {
-        return this.face;
-    }
-
-    private void setFace(int face) {
-        this.face = face;
-    }
-
-    public int getSuit() {
-        return this.suit;
-    }
-
-    private void setSuit(int suit) {
-        this.suit = suit;
-    }
-
-
 }
