@@ -1,17 +1,24 @@
-import java.util.*;
-
+import java.util.Arrays;
+import java.util.Collections;
 public class Deck {
 
         //public String[] deck;
-        private List<Card> deck = new ArrayList();
-        private String[] suits = {"0", "1", "2", "3"};
+        private List<Card> deck = new ArrayList
+        private String[] suits = {"clubs, diamonds, hearts, spades"};
         private String[] faces = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13"};
 
         public Deck() {
             for (String suit : suits){
                 for (String face: faces){
-                    deck.add(new Card(Integer.parseInt(suit), Integer.parseInt(face)));
+                    deck.add(new Card(suit, face))
                 }
+            }
+        }
+
+        @Override
+        public String toString(){
+            for (Card card: deck){
+                System.out.print(card.toString())
             }
         }
 
@@ -23,10 +30,9 @@ public class Deck {
             public int compare(Card c1, Card c2) {
                 int faceResult = c1.getFace().compareTo(c2.getFace());
                 if (faceResult != 0) {
-                    return faceResult;
+                    return faceResult
                 }
-                // suit result
-                return (c1.getSuit().compareTo(c2.getSuit()));
+                return (suitResult = c1.suit.compareTo(c2.suit));
             }
         }
 
@@ -36,22 +42,26 @@ public class Deck {
             Collections.reverse(this.deck);
         }
 
-        public void sortSuitVal() {
-            deck = new String[]{"001", "002", "003", "004", "005", "006", "007", "008", "009", "010", "011", "012", "013",
-                    "101", "102", "103", "104", "105", "106", "107", "108", "109", "110", "111", "112", "113",
-                    "201", "202", "203", "204", "205", "206", "207", "208", "209", "210", "211", "212", "213",
-                    "301", "302", "303", "304", "305", "306", "307", "308", "309", "310", "311", "312", "313"};
-        }
-        public void sortRSuitVal() {
-            deck = new String[]{"313", "213", "113", "013", "312", "212", "112", "012", "311", "211", "111", "011", "310", "210", "110", "010",
-                    "309", "209", "109", "009", "308", "208", "108", "008", "307", "207", "107", "007", "306", "206", "106", "006",
-                    "305", "205", "105", "005", "304", "204", "104", "004", "303", "203", "103", "003", "302", "202", "102", "002", "301", "201", "101", "001"};
+        public class SuitValComparator implements Comparator<Card> {
+            public int compare(Card c1, Card c2) {
+                int faceResult = c1.getSuit.compareTo(c2.getSuit);
+                if (faceResult != 0) {
+                    return faceResult
+                }
+                return (suitResult = c1.getFace.compareTo(c2.getFace));
+            }
         }
 
-        public Card getNextCard(String next) {
-            String suit = next.charAt(0);
-            String face = next.charAt(1) + next.charAt(2);
-            return Card(suit, face);
+        public void sortSuitVal() {
+            Collections.sort(this.deck, SuitValComparator);
+        }
+        public void sortRSuitVal() {
+            Collections.sort(this.deck, SuitValComparator);
+            Collections.reverse(this.deck);
+        }
+
+        public Card getNextCard(Card next) {
+
         }
 
         public void shuffle() {
