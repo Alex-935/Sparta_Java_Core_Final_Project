@@ -4,7 +4,7 @@ public class Deck {
 
         //public String[] deck;
         private List<Card> deck = new ArrayList();
-        private String[] suits = {"1", "2", "3", "4"};
+        private String[] suits = {"0", "1", "2", "3"};
         private String[] faces = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13"};
 
         public Deck() {
