@@ -2,6 +2,6 @@ public class App {
 
     public static void main(String[] args) {
 
-        new WelcomeSelection().start();
-        }
+        WelcomeSelection welcome = new WelcomeSelection();
     }
+}
