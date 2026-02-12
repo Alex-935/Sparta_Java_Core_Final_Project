@@ -16,12 +16,13 @@ public class Deck {
         }
 
         public void sortValSuit() {
+
             Collections.sort(this.deck, ValSuitComparator);
         }
 
         public class ValSuitComparator implements Comparator<Card> {
             public int compare(Card c1, Card c2) {
-                int faceResult = c1.face.compareTo(c2.face);
+                int faceResult = c1.getFace().compareTo(c2.getFace());
                 if (faceResult != 0) {
                     return faceResult
                 }
@@ -37,11 +38,11 @@ public class Deck {
 
         public class SuitValComparator implements Comparator<Card> {
             public int compare(Card c1, Card c2) {
-                int faceResult = c1.suit.compareTo(c2.suit);
+                int faceResult = c1.getSuit.compareTo(c2.getSuit);
                 if (faceResult != 0) {
                     return faceResult
                 }
-                return (suitResult = c1.face.compareTo(c2.face));
+                return (suitResult = c1.getFace.compareTo(c2.getFace));
             }
         }
 
