@@ -30,7 +30,7 @@ public class WelcomeSelection {
 
                 switch (choice) {
                     case 1 -> new Snap();
-                    case 2 -> new BlackJack();
+                    case 2 -> new BlackJack(new BlackJackDeck(), scanner);
                     //           case 3 -> Rules.showSnapRules();
                     //           case 4 -> Rules.showBlackjackRules();
                     case 5 -> sortMenu();
