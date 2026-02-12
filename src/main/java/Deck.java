@@ -48,7 +48,7 @@ public class Deck {
         }
 
         public Card getNextCard(int next) {
-
+            return -1
         }
 
         public void shuffle() {
