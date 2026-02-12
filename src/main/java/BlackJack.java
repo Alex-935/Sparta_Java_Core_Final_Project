@@ -189,5 +189,22 @@ public class BlackJack {
         }
     }
 
-
+    public static void rules() {
+        System.out.println("""
+                To play blackjack:
+                    - You and your opponent need to get as close to 21 without going over/bust.
+                    - Cards 2 - 10 have their face value.
+                    - Picture cards are worth 10.
+                    - Aces can be worth either 1 or 11.
+                    
+                    - After the initial draw, you can choose to either 'stick' or 'twist':
+                        - Stick: keep the cards you have.
+                        - Twist: add another card to your current hand.
+                        
+                    Scoring:
+                        - If you are bust (total over 21), you automatically lose!
+                        - The player who is closer to 21 and not bust wins!
+                        - If both players score the same, they tie.
+                """);
+    }
 }

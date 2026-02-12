@@ -1,49 +1,54 @@
 public class Card {
+
     private int suit; //0 = clubs 1=diamonds 2 = hearts 3 = spades
     private int face;
 
-    public Card(int s , int f){
-            this.suit = s;
-            this.face = f;
-        }
-
+    public Card(int s , int f) {
+        this.suit = s;
+        this.face = f;
     }
 
     @Override
     public String toString(){
-        return ("The current card is the " + printFace(this.face) + " of " + printSuit(this.suit);
+        return ("The current card is the " + printFace(this.face) + " of " + printSuit(this.suit));
     }
 
 
     public String printFace(int f){
-        switch (f) {
-            case (1-10) -> return Integer.toString(f);
-            case 11 -> return("jack");
-            case 12 -> return("queen");
-            case 13 -> return("king");
-        }
+
+        return switch (f) {
+            case 2, 3, 4, 5, 6, 7, 8, 9, 10 -> Integer.toString(f);
+            case 1 -> "Ace";
+            case 11 -> "Jack";
+            case 12 -> "Queen";
+            case 13 -> "King";
+            default -> "";
+        };
     }
 
-    public String printSuit(int s){
-        switch (s) {
-            case 0 -> return ("clubs");
-            case 1 -> return ("diamonds");
-            case 2 -> return ("hearts");
-            case 3 ->  return ("spades");
+    public String printSuit(int s) {
+        return switch (s) {
+            case 0 -> "Clubs";
+            case 1 -> "Diamonds";
+            case 2 -> "Hearts";
+            case 3 -> "Spades";
+            default -> "";
+        };
     }
 
-    public String getFace() {return face;
+    public int getFace() {
+        return this.face;
     }
 
-    private void setFace(String face) {
+    private void setFace(int face) {
         this.face = face;
     }
 
-    public String getSuit() {
-        return suit;
+    public int getSuit() {
+        return this.suit;
     }
 
-    private void setSuit(String suit) {
+    private void setSuit(int suit) {
         this.suit = suit;
     }
 

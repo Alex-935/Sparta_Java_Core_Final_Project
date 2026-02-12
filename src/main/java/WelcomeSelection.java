@@ -1,3 +1,4 @@
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class WelcomeSelection {
@@ -14,29 +15,29 @@ public class WelcomeSelection {
         System.out.println("\nPlease choose an option:");
         System.out.println("1. Snap");
         System.out.println("2. Blackjack");
-        //    System.out.println("3. Rules for Snap");
-        //    System.out.println("4. Rules for Blackjack");
-        //    System.out.println("5. Sort Deck");
-        System.out.print("Enter your choice (1–2): ");
+        System.out.println("3. Rules for Snap");
+        System.out.println("4. Rules for Blackjack");
+        System.out.println("5. Sort Deck");
+        System.out.print("Enter your choice (1–5): ");
 
-        int choice = scanner.nextInt();
         while (true) {
             try {
+                int choice = scanner.nextInt();
+                scanner.nextLine();
                 //              int value = Integer.parseInt(input);
                 if (choice >= 1 && choice <= 5) {
                     //              return choice;
+                    switch (choice) {
+                        case 1 -> new Snap();
+                        case 2 -> new BlackJack(new BlackJackDeck(), scanner);
+                        case 3 -> Snap.rules();
+                        case 4 -> BlackJack.rules();
+                        case 5 -> sortMenu();
+                        default -> System.out.println();
+                    }
                 }
+            } catch (InputMismatchException ignored) {
                 System.out.print("Invalid input. Please enter a valid number: ");
-
-                switch (choice) {
-                    case 1 -> new Snap();
-                    case 2 -> new BlackJack(new BlackJackDeck(), scanner);
-                    //           case 3 -> Rules.showSnapRules();
-                    //           case 4 -> Rules.showBlackjackRules();
-                    case 5 -> sortMenu();
-                    default -> System.out.println();
-                }
-            } catch (NumberFormatException ignored) {
             }
         }
     }
@@ -52,17 +53,27 @@ public class WelcomeSelection {
         try {
             int choice = scanner.nextInt();
             switch (choice) {
-                case 1 -> deck.sortValSuit();
-                case 2 -> deck.sortRValSuit();
-                case 3 -> deck.sortSuitVal();
-                case 4 -> deck.sortRSuitVal();
+                case 1:
+                    //deck.sortValSuit();
+                    break;
+                case 2:
+                    //deck.sortRValSuit();
+                    break;
+                case 3:
+                    //deck.sortSuitVal();
+                    break;
+                case 4:
+                    //deck.sortRSuitVal();
+                    break;
+                default:
+                    break;
             }
 
             System.out.println("\nDeck sorted successfully!");
-            System.out.println(deck.toString());
+            System.out.printf(deck.toString());
         }
         catch (Exception e) {
-
+            System.out.print("Invalid input. Please enter a valid number: ");
         }
     }
 }
