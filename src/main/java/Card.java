@@ -17,6 +17,11 @@ public class Card {
         }
     }
 
+    @Override
+    public String toString(){
+        return ("The current card is the " + this.face + " of " + this.suit);
+    }
+
     public String getFace() {
         return face;
     }
