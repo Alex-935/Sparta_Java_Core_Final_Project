@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Random;
 import java.util.Scanner;
 
 public class BlackJack {
@@ -12,20 +13,25 @@ public class BlackJack {
     int userTotal;
     int computerTotal;
     boolean computerStuck = false;
+    boolean playAgain;
+    Random random = new Random();
 
     BlackJack(BlackJackDeck deck, Scanner scanner) {
 
         // set-up game
         this.deck = deck;
-        initialiseGame();
 
-        // extra draw phase
-        userStickOrTwistLoop(scanner);
-        computerStickOrTwist();
+        do {
+            initialiseGame();
 
-        // decide winner
-        decideWinner();
+            // extra draw phase
+            userStickOrTwistLoop(scanner);
+            computerStickOrTwist();
 
+            // decide winner
+            decideWinner();
+            playAgain = toPlayAgain(scanner);
+        } while (playAgain);
     }
 
     private void initialiseGame() {
@@ -127,7 +133,7 @@ public class BlackJack {
 
         computerTotal = countCardTotal("computer");
 
-        while (computerTotal < 18) {
+        while (computerTotal < random.nextInt(15,19)) {
             computerHand.add(drawCard());
             computerTotal = countCardTotal("computer");
         }
@@ -189,7 +195,25 @@ public class BlackJack {
         }
     }
 
-    public static void rules() {
+    private boolean toPlayAgain(Scanner scanner) {
+
+        do {
+            System.out.print("Would you like to play again? ('y' or 'n'): ");
+            String input = scanner.nextLine();
+
+            if (input.equalsIgnoreCase("y")) {
+                return true;
+            }
+            else if (input.equalsIgnoreCase("n")) {
+                return false;
+            }
+            else {
+                System.out.println("Please enter 'y' or 'n'.");
+            }
+        } while (true);
+    }
+
+    protected static void rules() {
         System.out.println("""
                 To play blackjack:
                     - You and your opponent need to get as close to 21 without going over/bust.
@@ -207,4 +231,5 @@ public class BlackJack {
                         - If both players score the same, they tie.
                 """);
     }
+
 }
