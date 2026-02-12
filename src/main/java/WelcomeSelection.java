@@ -12,18 +12,24 @@ public class WelcomeSelection {
         System.out.println("=====================================");
         System.out.println("      WELCOME TO CARD GAMES!");
         System.out.println("=====================================");
-        System.out.println("\nPlease choose an option:");
-        System.out.println("1. Snap");
-        System.out.println("2. Blackjack");
-        System.out.println("3. Rules for Snap");
-        System.out.println("4. Rules for Blackjack");
-        System.out.println("5. Sort Deck");
-        System.out.print("Enter your choice (1–5): ");
+        //System.out.println("\nPlease choose an option:");
+        //System.out.println("1. Snap");
+        //System.out.println("2. Blackjack");
+        //System.out.println("3. Rules for Snap");
+        //System.out.println("4. Rules for Blackjack");
+        //System.out.println("5. Sort Deck");
+        //System.out.print("Enter your choice (1–5): ");
 
         while (true) {
+            System.out.println("\nPlease choose an option:");
+            System.out.println("1. Snap");
+            System.out.println("2. Blackjack");
+            System.out.println("3. Rules for Snap");
+            System.out.println("4. Rules for Blackjack");
+            System.out.println("5. Sort Deck");
+            System.out.print("Enter your choice (1–5): ");
             try {
-                int choice = scanner.nextInt();
-                scanner.nextLine();
+                int choice = Integer.parseInt(scanner.nextLine());//scanner.nextInt();
                 //              int value = Integer.parseInt(input);
                 if (choice >= 1 && choice <= 5) {
                     //              return choice;
@@ -36,7 +42,10 @@ public class WelcomeSelection {
                         default -> System.out.println();
                     }
                 }
-            } catch (InputMismatchException ignored) {
+                else {
+                    continue;
+                }
+            } catch (NumberFormatException ignored) {
                 System.out.print("Invalid input. Please enter a valid number: ");
             }
         }
@@ -51,26 +60,28 @@ public class WelcomeSelection {
         System.out.print("Choose sort option (1–4): ");
 
         try {
-            int choice = scanner.nextInt();
-            switch (choice) {
-                case 1:
-                    //deck.sortValSuit();
-                    break;
-                case 2:
-                    //deck.sortRValSuit();
-                    break;
-                case 3:
-                    //deck.sortSuitVal();
-                    break;
-                case 4:
-                    //deck.sortRSuitVal();
-                    break;
-                default:
-                    break;
-            }
+            int choice = Integer.parseInt(scanner.nextLine());//scanner.nextInt();
+            if (choice >= 1 && choice <= 4) {
+                switch (choice) {
+                    case 1:
+                        //deck.sortValSuit();
+                        break;
+                    case 2:
+                        //deck.sortRValSuit();
+                        break;
+                    case 3:
+                        //deck.sortSuitVal();
+                        break;
+                    case 4:
+                        //deck.sortRSuitVal();
+                        break;
+                    default:
+                        break;
+                }
 
-            System.out.println("\nDeck sorted successfully!");
-            System.out.printf(deck.toString());
+                System.out.println("\nDeck sorted successfully!");
+                System.out.printf(deck.toString());
+            }
         }
         catch (Exception e) {
             System.out.print("Invalid input. Please enter a valid number: ");

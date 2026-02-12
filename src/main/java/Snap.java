@@ -9,7 +9,15 @@ public class Snap {
     // empty constructor to prevent crash
     Snap() {}
     public static void rules() {
-        System.out.println("To play snap:");
+        System.out.println("""
+                To play snap:
+                    - Your goal is to get every card
+                    - Players take in turns placing a card on the middle pile.
+                    - When two cards of the same value are placed after each other, you need to say snap first.
+                    - The person that says snap first, gets the whole pile.
+                    - The person who runs out of cards first, loses!
+                    - The person who doesn't run out of cards is the winner!
+                """);
     }
 
     //public void split(Player p1, Player p2) {
