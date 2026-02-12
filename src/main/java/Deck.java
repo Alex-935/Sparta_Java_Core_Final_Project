@@ -15,8 +15,14 @@ public class Deck {
             }
         }
 
-        public void sortValSuit() {
+        @Override
+        public String toString(){
+            for (Card card: deck){
+                System.out.print(card.toString())
+            }
+        }
 
+        public void sortValSuit() {
             Collections.sort(this.deck, ValSuitComparator);
         }
 
