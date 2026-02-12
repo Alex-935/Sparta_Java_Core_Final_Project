@@ -54,9 +54,7 @@ public class Deck {
         }
 
         public Card getNextCard(Card next) {
-            String suit = next.charAt(0);
-            String face = next.charAt(1) + next.charAt(2);
-            return Card(suit, face);
+
         }
 
         public void shuffle() {
