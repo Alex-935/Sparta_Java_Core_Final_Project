@@ -3,7 +3,8 @@ public class Card {
     private int face;
 
     public Card(int s , int f){
-
+            this.suit = s;
+            this.face = f;
         }
 
     }
