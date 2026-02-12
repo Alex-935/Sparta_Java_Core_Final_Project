@@ -9,8 +9,8 @@ public class Deck {
 
         public Deck() {
             for (String suit : suits){
-                for (String rank: ranks){
-                    deck.add(new Card(suit, rank))
+                for (String face: faces){
+                    deck.add(new Card(suit, face))
                 }
             }
         }
@@ -35,19 +35,25 @@ public class Deck {
             Collections.reverse(this.deck);
         }
 
-        public void sortSuitVal() {
-            deck = new String[]{"001", "002", "003", "004", "005", "006", "007", "008", "009", "010", "011", "012", "013",
-                    "101", "102", "103", "104", "105", "106", "107", "108", "109", "110", "111", "112", "113",
-                    "201", "202", "203", "204", "205", "206", "207", "208", "209", "210", "211", "212", "213",
-                    "301", "302", "303", "304", "305", "306", "307", "308", "309", "310", "311", "312", "313"};
-        }
-        public void sortRSuitVal() {
-            deck = new String[]{"313", "213", "113", "013", "312", "212", "112", "012", "311", "211", "111", "011", "310", "210", "110", "010",
-                    "309", "209", "109", "009", "308", "208", "108", "008", "307", "207", "107", "007", "306", "206", "106", "006",
-                    "305", "205", "105", "005", "304", "204", "104", "004", "303", "203", "103", "003", "302", "202", "102", "002", "301", "201", "101", "001"};
+        public class SuitValComparator implements Comparator<Card> {
+            public int compare(Card c1, Card c2) {
+                int faceResult = c1.suit.compareTo(c2.suit);
+                if (faceResult != 0) {
+                    return faceResult
+                }
+                return (suitResult = c1.face.compareTo(c2.face));
+            }
         }
 
-        public Card getNextCard(String next) {
+        public void sortSuitVal() {
+            Collections.sort(this.deck, SuitValComparator);
+        }
+        public void sortRSuitVal() {
+            Collections.sort(this.deck, SuitValComparator);
+            Collections.reverse(this.deck);
+        }
+
+        public Card getNextCard(Card next) {
             String suit = next.charAt(0);
             String face = next.charAt(1) + next.charAt(2);
             return Card(suit, face);
