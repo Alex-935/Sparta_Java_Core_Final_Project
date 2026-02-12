@@ -1,16 +1,16 @@
-import java.util.Arrays;
-import java.util.Collections;
+import java.util.*;
+
 public class Deck {
 
         //public String[] deck;
-        private List<Card> deck = new ArrayList
-        private String[] suits = {"clubs, diamonds, hearts, spades"};
+        private List<Card> deck = new ArrayList();
+        private String[] suits = {"1", "2", "3", "4"};
         private String[] faces = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13"};
 
         public Deck() {
             for (String suit : suits){
-                for (String rank: ranks){
-                    deck.add(new Card(suit, rank))
+                for (String face: faces){
+                    deck.add(new Card(Integer.parseInt(suit), Integer.parseInt(face)));
                 }
             }
         }
@@ -21,11 +21,12 @@ public class Deck {
 
         public class ValSuitComparator implements Comparator<Card> {
             public int compare(Card c1, Card c2) {
-                int faceResult = c1.face.compareTo(c2.face);
+                int faceResult = c1.getFace().compareTo(c2.getFace());
                 if (faceResult != 0) {
-                    return faceResult
+                    return faceResult;
                 }
-                return (suitResult = c1.suit.compareTo(c2.suit));
+                // suit result
+                return (c1.getSuit().compareTo(c2.getSuit()));
             }
         }
 
