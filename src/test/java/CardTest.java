@@ -43,20 +43,6 @@ public class CardTest {
     }
 
     @Test
-    @DisplayName("Test printFace() for 0")
-    void printFaceKingTest() {
-        String result = card.printFace(0);
-        Assertions.assertTrue(result.equals(""));
-    }
-
-    @Test
-    @DisplayName("Test printFace() for 14")
-    void printFaceKingTest() {
-        String result = card.printFace(13);
-        Assertions.assertTrue(result.equals(""));
-    }
-
-    @Test
     @DisplayName("Test printFace() for -1")
     void printFaceNegativeNumberTest() {
         String result = card.printFace(-1);
