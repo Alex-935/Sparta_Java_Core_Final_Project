@@ -1,7 +1,4 @@
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 public class Deck {
 
@@ -41,20 +38,31 @@ public class Deck {
             Collections.shuffle(this.deck);
         }
 
-        /*
+
         public void sortValSuit() {
-            Collections.sort(this.deck, ValSuitComparator);
+            Comparator myComp = new ValSuitComparator();
+            Collections.sort(this.deck, myComp);
         }
 
-        public class ValSuitComparator implements Comparator<Card> {
+        class ValSuitComparator implements Comparator<Card> {
             public int compare(Card c1, Card c2) {
-                int faceResult = c1.getFace().compareTo(c2.getFace());
-                if (faceResult != 0) {
-                    return faceResult
+                //face result
+                if (c1.getFace() == c2.getFace()) {
+                    // face is same so suit result
+                    if (c1.getSuit() < (c2.getSuit())) {
+                        return -1;
+                    }else if (c1.getSuit() > (c2.getSuit())){
+                        return 1;
+                    }
+                }else if (c1.getFace() < c2.getFace()){
+                    return -1;
+                }else {
+                    return 1;
                 }
-                return (suitResult = c1.suit.compareTo(c2.suit));
+                return 0;
             }
         }
+
 
 
         public void sortRValSuit() {
@@ -62,25 +70,35 @@ public class Deck {
             Collections.reverse(this.deck);
         }
 
-        public class SuitValComparator implements Comparator<Card> {
+        class SuitValComparator implements Comparator<Card> {
             public int compare(Card c1, Card c2) {
-                int faceResult = c1.getSuit.compareTo(c2.getSuit);
-                if (faceResult != 0) {
-                    return faceResult
+                //suit result
+                if (c1.getSuit() == c2.getSuit()) {
+                // face is same so suit result
+                    if (c1.getFace() < (c2.getFace())) {
+                        return -1;
+                    }else if (c1.getFace() > (c2.getFace())){
+                        return 1;
+                    }
+                }else if (c1.getSuit() < c2.getSuit()){
+                    return -1;
+                }else {
+                    return 1;
                 }
-                return (suitResult = c1.getFace.compareTo(c2.getFace));
+                return 0;
             }
         }
 
         public void sortSuitVal() {
-            Collections.sort(this.deck, SuitValComparator);
+            Comparator myComp = new SuitValComparator();
+            Collections.sort(this.deck, myComp);
         }
         public void sortRSuitVal() {
-            Collections.sort(this.deck, SuitValComparator);
+            sortSuitVal();
             Collections.reverse(this.deck);
         }
 
-         */
+
 }
 //"001", "002", "003", "004", "005", "006", "007", "008", "009", "010", "011", "012", "013",
 //                    "101", "102", "103", "104", "105", "106", "107", "108", "109", "110", "111", "112", "113",

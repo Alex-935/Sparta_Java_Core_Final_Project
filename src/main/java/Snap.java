@@ -1,4 +1,5 @@
 import java.util.List;
+import java.util.Scanner;
 
 public class Snap {
 
@@ -7,19 +8,30 @@ public class Snap {
     List<Card> table;
 
     // empty constructor to prevent crash
-    Snap() {}
-    public static void rules() {
-        System.out.println("To play snap:");
+    Snap(Deck deck, Scanner scanner) {
     }
 
-    //public void split(Player p1, Player p2) {
-        // Alternating split between two players
-    //    boolean toggle = true;
+    public static void rules() {
+        System.out.println("""
+                To play snap:
+                    - Your goal is to get every card
+                    - Players take in turns placing a card on the middle pile.
+                    - When two cards of the same value are placed after each other, you need to say snap first.
+                    - The person that says snap first, gets the whole pile.
+                    - The person who runs out of cards first, loses!
+                    - The person who doesn't run out of cards is the winner!
+                """);
+    }
 
-    //    for (Card c : cards) {
-    //        if (toggle) p1.add(c);
-    //        else p2.add(c);
+    public void splitDeck() {
+        //Alternating split between two players
+        boolean toggle = true;
 
-    //        toggle = !toggle;
-    //    }
+        /*for (Card c : cards) {
+            if (toggle) p1.add(c);
+            else com.add(c);
+
+            toggle = !toggle;
+        }*/
+    }
 }
