@@ -43,6 +43,13 @@ public class CardTest {
     }
 
     @Test
+    @DisplayName("Test printFace() for 13")
+    void printFaceKingFalseTest() {
+        String result = card.printFace(14);
+        Assertions.assertFalse(result.equals("King"));
+    }
+
+    @Test
     @DisplayName("Test printFace() for -1")
     void printFaceNegativeNumberTest() {
         String result = card.printFace(-1);
@@ -54,6 +61,13 @@ public class CardTest {
     void printFaceExtremeIntegerTest() {
         String result = card.printFace(10000);
         Assertions.assertTrue(result.equals(""));
+    }
+
+    @Test
+    @DisplayName("Test printFace() for 01")
+    void printFaceInvalidIntegerTest() {
+        String result = card.printFace(01);
+        Assertions.assertFalse(result.equals(""));
     }
 
 
@@ -91,6 +105,13 @@ public class CardTest {
     @DisplayName("Test printSuit() for -1")
     void printSuitNegativeNumberTest() {
         String result = card.printSuit(-1);
+        Assertions.assertTrue(result.isEmpty());
+    }
+
+    @Test
+    @DisplayName("Test printSuit() for 4")
+    void printSuitInvalidNumberTest() {
+        String result = card.printSuit(4);
         Assertions.assertTrue(result.isEmpty());
     }
 
