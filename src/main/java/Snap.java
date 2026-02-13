@@ -40,11 +40,13 @@ public class Snap {
             toggle = !toggle;
 
             Card topCard = table.pop();
+
             if (!table.empty()) {
                 Card secondCard = table.pop();
+
                 if (topCard.getFace() == secondCard.getFace()) {
                     //time delay etc etc
-                    System.out.println("faces are equal");
+                    System.out.println("Faces are equal");
                     String showdownCountdown = Countdown(scanner);
 
                     table.push(secondCard);
@@ -65,8 +67,19 @@ public class Snap {
                         }
                     }
                     table.clear();
+                }else{
+                    table.push(secondCard);
+                    table.push(topCard);
                 }
+            }else {
+                table.push(topCard);
             }
+        }
+
+        if (com.empty()){
+            System.out.println("Com hand empty. You win!");
+        }else {
+            System.out.println("P1 hand empty. Computer win!");
         }
 
         if (toPlayAgain(scanner) == true){
