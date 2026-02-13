@@ -38,8 +38,22 @@ public class CardTest {
     @Test
     @DisplayName("Test printFace() for 13")
     void printFaceKingTest() {
-        String result = card.printFace(13);
+        String result = card.printFace(14);
         Assertions.assertTrue(result.equals("King"));
+    }
+
+    @Test
+    @DisplayName("Test printFace() for 0")
+    void printFaceKingTest() {
+        String result = card.printFace(0);
+        Assertions.assertTrue(result.equals(""));
+    }
+
+    @Test
+    @DisplayName("Test printFace() for 14")
+    void printFaceKingTest() {
+        String result = card.printFace(13);
+        Assertions.assertTrue(result.equals(""));
     }
 
     @Test
@@ -53,6 +67,13 @@ public class CardTest {
     @DisplayName("Test printFace() for 10000")
     void printFaceExtremeIntegerTest() {
         String result = card.printFace(10000);
+        Assertions.assertTrue(result.equals(""));
+    }
+
+    @Test
+    @DisplayName("Test printFace() for 01")
+    void printFaceInvalidIntegerTest() {
+        String result = card.printFace(01);
         Assertions.assertTrue(result.equals(""));
     }
 
@@ -91,6 +112,13 @@ public class CardTest {
     @DisplayName("Test printSuit() for -1")
     void printSuitNegativeNumberTest() {
         String result = card.printSuit(-1);
+        Assertions.assertTrue(result.isEmpty());
+    }
+
+    @Test
+    @DisplayName("Test printSuit() for 4")
+    void printSuitInvalidNumberTest() {
+        String result = card.printSuit(4);
         Assertions.assertTrue(result.isEmpty());
     }
 
