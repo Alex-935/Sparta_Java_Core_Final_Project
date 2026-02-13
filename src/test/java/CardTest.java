@@ -38,8 +38,15 @@ public class CardTest {
     @Test
     @DisplayName("Test printFace() for 13")
     void printFaceKingTest() {
-        String result = card.printFace(14);
+        String result = card.printFace(13);
         Assertions.assertTrue(result.equals("King"));
+    }
+
+    @Test
+    @DisplayName("Test printFace() for 13")
+    void printFaceKingFalseTest() {
+        String result = card.printFace(14);
+        Assertions.assertFalse(result.equals("King"));
     }
 
     @Test
@@ -60,7 +67,7 @@ public class CardTest {
     @DisplayName("Test printFace() for 01")
     void printFaceInvalidIntegerTest() {
         String result = card.printFace(01);
-        Assertions.assertTrue(result.equals(""));
+        Assertions.assertFalse(result.equals(""));
     }
 
 
