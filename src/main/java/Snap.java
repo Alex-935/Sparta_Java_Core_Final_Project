@@ -51,11 +51,13 @@ public class Snap {
                 //if p1 fast
                 //
                 if (showdownCountdown.equals("p1")) {
+                    System.out.println("You said snap first! Gain all cards on table");
                     for (Card card : table) {
                         p1.push(card);
                     }
                 }else {
                     //else com is faster
+                    System.out.println("The computer said snap faster! It takes all the cards");
                     for (Card card : table) {
                         com.push(card);
                     }
