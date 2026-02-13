@@ -4,7 +4,6 @@ import org.junit.jupiter.api.DisplayName;
 
 public class BlackJackTest {
 
-    //@Test
-    //@DisplayName()
+    // impossible to test as all methods are private
 
 }

@@ -12,7 +12,7 @@ public class BlackJack {
     StringBuilder handString = new StringBuilder();
     int userTotal;
     int computerTotal;
-    boolean computerStuck = false;
+    boolean computerStuck;
     boolean playAgain;
     Random random = new Random();
 
@@ -39,6 +39,8 @@ public class BlackJack {
         this.deck.shuffle();
         // keeps track of what card is next
         deckPosition = 0;
+        // set/reset variable
+        computerStuck = false;
 
         // draw hands
         initialUserDraw();

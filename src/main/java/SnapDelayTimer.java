@@ -1,7 +1,7 @@
 import java.util.concurrent.ThreadLocalRandom;
 
 /*
- *  Neuro accessibility feature that handles delay timing for turn pacing
+ *  Neurodivergent accessibility feature that handles delay timing for turn pacing
  *  In Snap the time to react can be impacted by neural and motor impairments
  *  For future development, consider adding voice input
  */
@@ -13,6 +13,7 @@ public class SnapDelayTimer {
     /*
      * Generates a random delay between 400 and 1500 ms
      */
+
     private long generateRandomDelay() {
         // Random option preserved, but made realistically typable for console input
         return ThreadLocalRandom.current().nextLong(1200, 3501);
@@ -22,6 +23,7 @@ public class SnapDelayTimer {
      * Sets delay based on a chosen speed option (between cases 1 and 4)
      * Default set to random
      */
+  
     public void setDelayByChoice(int choice) {
         // Neutral mapping of speed choice to delay values
         if (choice == 1) delayMs = 3500;                 // Slow (console-typable)
