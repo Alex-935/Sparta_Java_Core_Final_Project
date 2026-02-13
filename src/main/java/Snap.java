@@ -1,7 +1,4 @@
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
-import java.util.Stack;
+import java.util.*;
 import java.util.concurrent.ThreadLocalRandom;
 
 
@@ -41,9 +38,23 @@ public class Snap {
         //while p1 not empty and com not empty
         while (!p1.empty() && !com.empty()) {
             if (toggle) {
+                do {
+                    System.out.print("Enter n to play next card: ");
+                } while (!(scanner.next().equals("n")));
                 playCard(p1);
+                try {
+                    Thread.sleep(500);
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                }
             } else {
+                System.out.println("Computer Plays: ");
                 playCard(com);
+                try {
+                    Thread.sleep(100);
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                }
             }
             toggle = !toggle;
 
