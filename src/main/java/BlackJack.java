@@ -5,10 +5,10 @@ import java.util.Scanner;
 
 public class BlackJack {
 
-    BlackJackDeck deck;
+    Deck deck;
     int deckPosition;
-    ArrayList<BlackJackCard> userHand;
-    ArrayList<BlackJackCard> computerHand;
+    ArrayList<Card> userHand;
+    ArrayList<Card> computerHand;
     StringBuilder handString = new StringBuilder();
     int userTotal;
     int computerTotal;
@@ -16,7 +16,7 @@ public class BlackJack {
     boolean playAgain;
     Random random = new Random();
 
-    BlackJack(BlackJackDeck deck, Scanner scanner) {
+    BlackJack(Deck deck, Scanner scanner) {
 
         // set-up game
         this.deck = deck;
@@ -46,7 +46,7 @@ public class BlackJack {
         printGame();
     }
 
-    private BlackJackCard drawCard() {
+    private Card drawCard() {
         this.deckPosition++;
         return this.deck.getNextCard(this.deckPosition-1);
 
@@ -65,7 +65,7 @@ public class BlackJack {
     private String printHand(String player) {
 
         // hand we're using
-        ArrayList<BlackJackCard> hand;
+        ArrayList<Card> hand;
 
         // reset StringBuilder
         handString.setLength(0);
@@ -143,11 +143,11 @@ public class BlackJack {
 
     private int countCardTotal(String player) {
 
-        ArrayList<BlackJackCard> hand = (player.equals("user")) ? userHand : computerHand;
+        ArrayList<Card> hand = (player.equals("user")) ? userHand : computerHand;
         int total = 0;
         int aceCount = 0;
 
-        for (BlackJackCard card : hand) {
+        for (Card card : hand) {
             if (card.getFace() > 9) {
                 total += 10;
             }

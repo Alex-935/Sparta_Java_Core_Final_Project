@@ -35,7 +35,7 @@ public class WelcomeSelection {
                     //              return choice;
                     switch (choice) {
                         case 1 -> new Snap();
-                        case 2 -> new BlackJack(new BlackJackDeck(), scanner);
+                        case 2 -> new BlackJack(new Deck(), scanner);
                         case 3 -> Snap.rules();
                         case 4 -> BlackJack.rules();
                         case 5 -> sortMenu();
