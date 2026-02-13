@@ -68,7 +68,7 @@ public class Snap {
 
                 if (topCard.getFace() == secondCard.getFace()) {
                     //time delay etc etc
-                    System.out.println("Faces are equal");
+                    System.out.println("Faces are equal type s for snap!");
                     String showdownCountdown = Countdown(scanner);
 
 
