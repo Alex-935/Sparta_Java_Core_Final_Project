@@ -7,7 +7,9 @@ public class Snap {
     List<Card> table;
 
     // empty constructor to prevent crash
-    Snap(int i, boolean b) {}
+    Snap(int i, boolean b) {
+    }
+
     public static void rules() {
         System.out.println("""
                 To play snap:
@@ -20,14 +22,15 @@ public class Snap {
                 """);
     }
 
-    //public void split(Player p1, Player p2) {
-        // Alternating split between two players
-    //    boolean toggle = true;
+    public void splitDeck() {
+        //Alternating split between two players
+        boolean toggle = true;
 
-    //    for (Card c : cards) {
-    //        if (toggle) p1.add(c);
-    //        else p2.add(c);
+        for (Card c : cards) {
+            if (toggle) p1.add(c);
+            else com.add(c);
 
-    //        toggle = !toggle;
-    //    }
+            toggle = !toggle;
+        }
+    }
 }
