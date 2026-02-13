@@ -7,7 +7,7 @@ public class Snap {
     List<Card> table;
 
     // empty constructor to prevent crash
-    Snap() {}
+    Snap(int i, boolean b) {}
     public static void rules() {
         System.out.println("""
                 To play snap:

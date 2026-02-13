@@ -36,7 +36,7 @@ public class WelcomeSelection {
                 if (choice >= 1 && choice <= 6) {
                     //              return choice;
                     switch (choice) {
-                        case 1 -> new Snap();
+                        case 1 -> new Snap(1, true);
                         case 2 -> new BlackJack(new Deck(), scanner);
                         case 3 -> Snap.rules();
                         case 4 -> BlackJack.rules();
