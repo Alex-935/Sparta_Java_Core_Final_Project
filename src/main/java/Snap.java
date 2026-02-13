@@ -1,4 +1,5 @@
 import java.util.List;
+import java.util.Scanner;
 
 public class Snap {
 
@@ -7,7 +8,7 @@ public class Snap {
     List<Card> table;
 
     // empty constructor to prevent crash
-    Snap(int i, boolean b) {
+    Snap(Deck deck, Scanner scanner) {
     }
 
     public static void rules() {
