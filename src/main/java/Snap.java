@@ -40,29 +40,31 @@ public class Snap {
             toggle = !toggle;
 
             Card topCard = table.pop();
-            Card secondCard = table.pop();
-            if (topCard.getFace() == secondCard.getFace()) {
-                //time delay etc etc
-                String showdownCountdown = Countdown(scanner);
+            if (!table.empty()) {
+                Card secondCard = table.pop();
+                if (topCard.getFace() == secondCard.getFace()) {
+                    //time delay etc etc
+                    String showdownCountdown = Countdown(scanner);
 
-                table.push(secondCard);
-                table.push(topCard);
+                    table.push(secondCard);
+                    table.push(topCard);
 
-                //if p1 fast
-                //
-                if (showdownCountdown.equals("p1")) {
-                    System.out.println("You said snap first! Gain all cards on table");
-                    for (Card card : table) {
-                        p1.push(card);
+                    //if p1 fast
+                    //
+                    if (showdownCountdown.equals("p1")) {
+                        System.out.println("You said snap first! Gain all cards on table");
+                        for (Card card : table) {
+                            p1.push(card);
+                        }
+                    } else {
+                        //else com is faster
+                        System.out.println("The computer said snap faster! It takes all the cards");
+                        for (Card card : table) {
+                            com.push(card);
+                        }
                     }
-                }else {
-                    //else com is faster
-                    System.out.println("The computer said snap faster! It takes all the cards");
-                    for (Card card : table) {
-                        com.push(card);
-                    }
+                    table.clear();
                 }
-                table.clear();
             }
         }
 
