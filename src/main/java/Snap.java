@@ -44,6 +44,7 @@ public class Snap {
                 Card secondCard = table.pop();
                 if (topCard.getFace() == secondCard.getFace()) {
                     //time delay etc etc
+                    System.out.println("faces are equal");
                     String showdownCountdown = Countdown(scanner);
 
                     table.push(secondCard);
@@ -68,7 +69,9 @@ public class Snap {
             }
         }
 
-        toPlayAgain(scanner);
+        if (toPlayAgain(scanner) == true){
+            new Snap(new Deck(), scanner);
+        };
     }
 
 

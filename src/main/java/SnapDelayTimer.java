@@ -30,7 +30,7 @@ public class SnapDelayTimer {
         else if (choice == 4) delayMs = generateRandomDelay(); // Random
         else delayMs = generateRandomDelay();            // Default now random
 
-        System.out.printf("DEBUG: setDelayByChoice(%d) -> %dms%n", choice, delayMs);
+        //System.out.printf("DEBUG: setDelayByChoice(%d) -> %dms%n", choice, delayMs);
         return delayMs;
     }
 }
