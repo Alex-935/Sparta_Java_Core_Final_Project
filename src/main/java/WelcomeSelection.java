@@ -20,18 +20,20 @@ public class WelcomeSelection {
         //System.out.println("5. Sort Deck");
         //System.out.print("Enter your choice (1–5): ");
 
-        while (true) {
+        boolean reselect = true;
+        while (reselect) {
             System.out.println("\nPlease choose an option:");
             System.out.println("1. Snap");
             System.out.println("2. Blackjack");
             System.out.println("3. Rules for Snap");
             System.out.println("4. Rules for Blackjack");
             System.out.println("5. Sort Deck");
-            System.out.print("Enter your choice (1–5): ");
+            System.out.println("6. Exit");
+            System.out.print("Enter your choice (1–6): ");
             try {
                 int choice = Integer.parseInt(scanner.nextLine());//scanner.nextInt();
                 //              int value = Integer.parseInt(input);
-                if (choice >= 1 && choice <= 5) {
+                if (choice >= 1 && choice <= 6) {
                     //              return choice;
                     switch (choice) {
                         case 1 -> new Snap();
@@ -39,14 +41,15 @@ public class WelcomeSelection {
                         case 3 -> Snap.rules();
                         case 4 -> BlackJack.rules();
                         case 5 -> sortMenu();
+                        case 6 -> reselect = false;
                         default -> System.out.println();
                     }
                 }
                 else {
-                    continue;
+                    throw new NumberFormatException();
                 }
             } catch (NumberFormatException ignored) {
-                System.out.print("Invalid input. Please enter a valid number: ");
+                System.out.println("Invalid input. Please enter a valid number.");
             }
         }
     }
@@ -59,32 +62,28 @@ public class WelcomeSelection {
         System.out.println("4. Suit → Value (Reverse)");
         System.out.print("Choose sort option (1–4): ");
 
-        try {
-            int choice = Integer.parseInt(scanner.nextLine());//scanner.nextInt();
-            if (choice >= 1 && choice <= 4) {
-                switch (choice) {
-                    case 1:
-                        //deck.sortValSuit();
-                        break;
-                    case 2:
-                        //deck.sortRValSuit();
-                        break;
-                    case 3:
-                        //deck.sortSuitVal();
-                        break;
-                    case 4:
-                        //deck.sortRSuitVal();
-                        break;
-                    default:
-                        break;
-                }
+        while (true) {
+            try {
+                int choice = Integer.parseInt(scanner.nextLine());//scanner.nextInt();
+                if (choice >= 1 && choice <= 4) {
+                    switch (choice) {
+                        case 1 -> deck.sortValSuit();
+                        case 2 -> deck.sortRValSuit();
+                        case 3 -> deck.sortSuitVal();
+                        case 4 -> deck.sortRSuitVal();
+                        default -> System.out.print("");
+                    }
 
-                System.out.println("\nDeck sorted successfully!");
-                System.out.printf(deck.toString());
+                    System.out.println("\nDeck sorted successfully!");
+                    System.out.printf(deck.toString());
+                    break;
+                }
+                else {
+                    throw new NumberFormatException();
+                }
+            } catch (NumberFormatException e) {
+                System.out.print("Invalid input. Please enter a valid number: ");
             }
-        }
-        catch (Exception e) {
-            System.out.print("Invalid input. Please enter a valid number: ");
         }
     }
 }
