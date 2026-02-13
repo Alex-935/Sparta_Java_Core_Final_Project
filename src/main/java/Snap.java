@@ -4,6 +4,7 @@ import java.util.Scanner;
 import java.util.Stack;
 import java.util.concurrent.ThreadLocalRandom;
 
+
 public class Snap {
     Deck deck;
     long delayMs;
@@ -13,10 +14,13 @@ public class Snap {
     Stack<Card> table = new Stack<>();
 
 
+
+
     // empty constructor to prevent crash
     Snap(Deck deck, Scanner scanner) {
         this.deck = deck;
         this.deck.shuffle();
+
 
         System.out.println("Input delay speed: ");
         System.out.println("1.Slow");
@@ -24,11 +28,15 @@ public class Snap {
         System.out.println("3.Fast");
         System.out.println("4.Random");
 
+
         delayMs = SnapDelayTimer.setDelayByChoice(scanner.nextInt());
+
 
         splitDeck();
 
+
         boolean toggle = true;
+
 
         //while p1 not empty and com not empty
         while (!p1.empty() && !com.empty()) {
@@ -39,18 +47,23 @@ public class Snap {
             }
             toggle = !toggle;
 
+
             Card topCard = table.pop();
+
 
             if (!table.empty()) {
                 Card secondCard = table.pop();
+
 
                 if (topCard.getFace() == secondCard.getFace()) {
                     //time delay etc etc
                     System.out.println("Faces are equal");
                     String showdownCountdown = Countdown(scanner);
 
+
                     table.push(secondCard);
                     table.push(topCard);
+
 
                     //if p1 fast
                     //
@@ -76,11 +89,13 @@ public class Snap {
             }
         }
 
+
         if (com.empty()){
             System.out.println("Com hand empty. You win!");
         }else {
             System.out.println("P1 hand empty. Computer win!");
         }
+
 
         if (toPlayAgain(scanner) == true){
             new Snap(new Deck(), scanner);
@@ -88,22 +103,28 @@ public class Snap {
     }
 
 
+
+
     private Card drawCard() {
         this.deckPosition++;
         return this.deck.getNextCard(this.deckPosition-1);
+
 
     }
     public void splitDeck() {
         //Alternating split between two players
         boolean toggle = true;
 
+
         for (int i=0; i<= 51; i++) {
             if (toggle) p1.push(drawCard());
             else com.push(drawCard());
 
+
             toggle = !toggle;
         }
     }
+
 
     public void playCard(Stack playerDeck){
         //output
@@ -112,17 +133,23 @@ public class Snap {
         //add onto table
         table.push((Card) next);
 
+
     }
+
 
     public String Countdown(Scanner s) {
 
+
         long endTime = System.currentTimeMillis() + delayMs;
+
 
         while (!s.next().equals("s")) {
             long remaining = endTime - System.currentTimeMillis();
             if (remaining <= 0) return "com";
 
+
             //System.out.println("Time left: " + remaining + "ms");
+
 
             try {
                 Thread.sleep(250);
@@ -132,12 +159,15 @@ public class Snap {
         }
         return "p1";
 
+
     }
     private boolean toPlayAgain(Scanner scanner) {
+
 
         do {
             System.out.print("Would you like to play again? ('y' or 'n'): ");
             String input = scanner.nextLine();
+
 
             if (input.equalsIgnoreCase("y")) {
                 return true;
@@ -151,15 +181,16 @@ public class Snap {
         } while (true);
     }
 
+
     public static void rules() {
         System.out.println("""
-                To play snap:
-                    - Your goal is to get every card
-                    - Players take in turns placing a card on the middle pile.
-                    - When two cards of the same value are placed after each other, you need to say snap first.
-                    - The person that says snap first, gets the whole pile.
-                    - The person who runs out of cards first, loses!
-                    - The person who doesn't run out of cards is the winner!
-                """);
+               To play snap:
+                   - Your goal is to get every card
+                   - Players take in turns placing a card on the middle pile.
+                   - When two cards of the same value are placed after each other, you need to say snap first.
+                   - The person that says snap first, gets the whole pile.
+                   - The person who runs out of cards first, loses!
+                   - The person who doesn't run out of cards is the winner!
+               """);
     }
 }
