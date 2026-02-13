@@ -90,7 +90,7 @@ public class Deck {
         }
 
         public void sortSuitVal() {
-            Comparator myComp = new ValSuitComparator();
+            Comparator myComp = new SuitValComparator();
             Collections.sort(this.deck, myComp);
         }
         public void sortRSuitVal() {
