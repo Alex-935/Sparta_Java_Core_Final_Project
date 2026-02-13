@@ -26,11 +26,11 @@ public class Snap {
         //Alternating split between two players
         boolean toggle = true;
 
-        for (Card c : cards) {
+        /*for (Card c : cards) {
             if (toggle) p1.add(c);
             else com.add(c);
 
             toggle = !toggle;
-        }
+        }*/
     }
 }
