@@ -1,5 +1,7 @@
 # Sparta Java Core Final Project
 
+# Requirements:
+
 ## Expectations
 - A working application
 - A GitHub repository, along wiht a suitable branching strategy
@@ -27,5 +29,29 @@
 ### Presentation:
 - Overview / Introduction
 - Outline any decisions you have made about 
+  
+<br>
 
-      
+# Our Solution:
+
+## App:
+
+    - Instantiates welcome menu.
+
+<img width="594" height="196" alt="image" src="https://github.com/user-attachments/assets/74e3683a-dd4c-4fc0-ad7f-9dc2034edffe" />
+
+## WelcomeSelection:
+
+    - Allows the user to choose to play snap or blackjack.
+    - Allows the user to see the ruled for snap/blackjack without instantiating class.
+    - Allows the user to sort the deck in the ways mentioned in the requirements.
+    - Loops infinitely until the user opts to exit.
+    - All choices validated and only appropriate inputs are accepted.
+
+### Example of running program:
+
+<img width="484" height="561" alt="image" src="https://github.com/user-attachments/assets/5de92382-6090-45ce-8b57-7f474416ad3b" />
+
+### Sorting menu:
+
+<img width="486" height="431" alt="image" src="https://github.com/user-attachments/assets/82d78d18-2c47-4893-93ea-1c6e811d6772" />
