@@ -61,6 +61,10 @@ ________________________________________________________________________________
 
 <img width="486" height="431" alt="image" src="https://github.com/user-attachments/assets/82d78d18-2c47-4893-93ea-1c6e811d6772" />
 
+### Input validation:
+
+<img width="821" height="871" alt="image" src="https://github.com/user-attachments/assets/eb2c90a3-71e4-4079-a566-ca225775d18b" />
+
 <br>
 ________________________________________________________________________________________________________________________________________________________
 <br>
@@ -142,6 +146,10 @@ ________________________________________________________________________________
 ### Gameplay example:
 
 <img width="968" height="1099" alt="image" src="https://github.com/user-attachments/assets/4d156ada-4a38-4837-bfed-3b1ef73c1706" />
+
+### Randomised computer stick point and Reducing ace value when bust:
+
+<img width="821" height="1028" alt="image" src="https://github.com/user-attachments/assets/bbd70d3d-aaf0-47e3-a5d6-983fec063593" />
 
 <br>
 ________________________________________________________________________________________________________________________________________________________
