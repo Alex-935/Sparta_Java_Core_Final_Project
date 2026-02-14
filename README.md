@@ -9,7 +9,9 @@
 - Unit testing
 
 ## Tasks:
-- Allow the user to choose between snap and blackjack
+- Allow the user to choose between:
+    - Snap: https://en.wikipedia.org/wiki/Snap_(card_game)
+    - Black Jack (21): https://en.wikipedia.org/wiki/Blackjack
 
 ### Deck of Cards:
 - Keep track of a deck of 52 cards (13 per suit)
@@ -26,9 +28,12 @@
 - Handle the interaction of the player to both select and play the game.
 - Ensure that the player does not 'break' the game by invalid input.
 
-### Presentation:
-- Overview / Introduction
-- Outline any decisions you have made about 
+### Presenting Your Project:
+- Overview / Introduction to set the context for the presentation.
+- Outline any decisions you have made about scoping / prioritisation.
+- Show and explain elements of your code.
+- Presentation / Demonstration should last no more than 20 minutes.
+- Everyone in the group should contribute.
 
 ________________________________________________________________________________________________________________________________________________________
 <br>
