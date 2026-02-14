@@ -48,10 +48,45 @@
     - Loops infinitely until the user opts to exit.
     - All choices validated and only appropriate inputs are accepted.
 
-### Example of running program:
+###  Welcome menu:
 
 <img width="484" height="561" alt="image" src="https://github.com/user-attachments/assets/5de92382-6090-45ce-8b57-7f474416ad3b" />
 
 ### Sorting menu:
 
 <img width="486" height="431" alt="image" src="https://github.com/user-attachments/assets/82d78d18-2c47-4893-93ea-1c6e811d6772" />
+
+## Deck
+
+    - Used by both game classes.
+    - Instantiates ArrayList of 52 unique cards.
+    - Has a method to get the next card.
+    - Has a method to shuffle the deck.
+    - Overrides toString to print out the entrie deck in order (Uses StringBuilder for memory efficiency).
+    - Implements the required sorting functions.
+
+### Constructor and non-sorting functions:
+
+<img width="668" height="794" alt="image" src="https://github.com/user-attachments/assets/5ed897d9-b2d2-4bb6-86e6-2262009fb78a" />
+
+### Sorting functions:
+
+<img width="732" height="743" alt="image" src="https://github.com/user-attachments/assets/e76aecbf-0673-41cb-a458-ded9ee72e5b6" />
+
+## Card:
+
+    - Instantiates card that has private attributes of suit and face.
+    - Has public getters and private setters.
+    - Functions to convert suits/face from integers to their appropriate strings.
+    - Overrides toString to return full card name.
+
+### Converts card attributes to make them more readily usable in the games:
+
+<img width="969" height="736" alt="image" src="https://github.com/user-attachments/assets/e9ce0315-7425-497d-93fa-8077ef59a335" />
+
+## Snap:
+
+
+
+
+
