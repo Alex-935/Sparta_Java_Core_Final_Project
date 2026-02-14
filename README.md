@@ -142,3 +142,17 @@ ________________________________________________________________________________
 ### Gameplay example:
 
 <img width="968" height="1099" alt="image" src="https://github.com/user-attachments/assets/4d156ada-4a38-4837-bfed-3b1ef73c1706" />
+
+<br>
+________________________________________________________________________________________________________________________________________________________
+<br>
+
+## Testing:
+
+    - Added testing where appropriate.
+    - Tested a range of expected and unexpected inputs.
+    - All unit tests passed.
+
+### Test code:
+<img width="621" height="736" alt="image" src="https://github.com/user-attachments/assets/da3fc253-679d-48fc-b7e0-aad9a19a7deb" />
+
