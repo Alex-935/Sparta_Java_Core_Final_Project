@@ -29,7 +29,8 @@
 ### Presentation:
 - Overview / Introduction
 - Outline any decisions you have made about 
-  
+
+________________________________________________________________________________________________________________________________________
 <br>
 
 # Our Solution:
@@ -39,6 +40,9 @@
     - Instantiates welcome menu.
 
 <img width="594" height="196" alt="image" src="https://github.com/user-attachments/assets/74e3683a-dd4c-4fc0-ad7f-9dc2034edffe" />
+
+<br>
+<br>
 
 ## WelcomeSelection:
 
@@ -55,6 +59,9 @@
 ### Sorting menu:
 
 <img width="486" height="431" alt="image" src="https://github.com/user-attachments/assets/82d78d18-2c47-4893-93ea-1c6e811d6772" />
+
+<br>
+<br>
 
 ## Deck
 
@@ -73,6 +80,9 @@
 
 <img width="732" height="743" alt="image" src="https://github.com/user-attachments/assets/e76aecbf-0673-41cb-a458-ded9ee72e5b6" />
 
+<br>
+<br>
+
 ## Card:
 
     - Instantiates card that has private attributes of suit and face.
@@ -84,9 +94,39 @@
 
 <img width="969" height="736" alt="image" src="https://github.com/user-attachments/assets/e9ce0315-7425-497d-93fa-8077ef59a335" />
 
+<br>
+<br>
+
 ## Snap:
 
+    - Uses a stack to keep track of the middle pile and compare last card.
+    - Adds a delay between each card being placed to make it easier to follow.
+    - Allows user to type to place next card so you can go at your own pace.
+    - Player types in 's' to snap, while the computer uses a timer to delay it's 'snap'.
+    - Allows the user to choose different timer speeds to allow for different reaction times.
+    - Ability to replay game without returning to the menu.
+    - All user inputs validated.
+    - Static rules method to allow the rules to be seen without instantiating the game class.
 
+### Gameplay example:
 
+<img width="672" height="835" alt="image" src="https://github.com/user-attachments/assets/e3c2a60d-6e13-4604-aa88-708f5536f8eb" />
 
+## SnapDelayTimer:
 
+    - Used to determine how long the user has to type 's' to snap before the computer says snap.
+
+<img width="912" height="333" alt="image" src="https://github.com/user-attachments/assets/139d8ca9-0dca-450d-aa3a-035c8a43fe4e" />
+
+## BlackJack
+
+    - Hides first computer card so you don't know exactly what the opponent has.
+    - Allows you to twist until you are bust but not beyond that.
+    - Automatically assigns Aces a value of 11 and reduces the value to 1 when hand total exceeds 21.
+    - Computer will stop twisting at a randomised hand total between 15 (inclusive) and 19 (exclusive).
+    - You always lose if you bust and ties are accounted for.
+    - Ability to replay game without returning to the menu.
+    - All user inputs validated.
+    - Static rules method to allow the rules to be seen without instantiating the game class.
+
+<img width="968" height="1099" alt="image" src="https://github.com/user-attachments/assets/4d156ada-4a38-4837-bfed-3b1ef73c1706" />
